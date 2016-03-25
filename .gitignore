@@ -1,0 +1,11 @@
+*.class
+*.jar
+*.zip
+*.tmp
+*.out
+*.iml
+
+.idea/
+.gradle/
+build/
+lib/
