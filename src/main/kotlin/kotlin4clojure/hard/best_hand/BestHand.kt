@@ -1,8 +1,7 @@
 package kotlin4clojure.hard.best_hand
 
 fun rank(vararg cards: String): Rank {
-    // TODO Add your solution here.
-    throw RuntimeException()
+    TODO("Add your solution here")
 }
 
 enum class Rank {
