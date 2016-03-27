@@ -16,6 +16,7 @@ class EulersTotientFunctionTest {
     }
 
     @Test fun f2() {
+        assertEquals(listOf(1, 3, 7, 9).size, eulerTotient(10))
     }
 
     @Test fun f3() {
