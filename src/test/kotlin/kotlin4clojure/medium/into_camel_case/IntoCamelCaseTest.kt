@@ -1,4 +1,4 @@
-package kotlin4clojure.medium.intocamelcase
+package kotlin4clojure.medium.into_camel_case
 
 import kotlin.test.assertEquals
 import org.junit.Test
