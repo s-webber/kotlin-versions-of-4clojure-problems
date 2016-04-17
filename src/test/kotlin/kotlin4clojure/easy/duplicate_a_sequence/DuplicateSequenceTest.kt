@@ -6,24 +6,24 @@ import org.junit.Test
 /**
  * 32. Duplicate a Sequence
  * 
- * Write a function which duplicates each element of a list.
+ * Write a function which duplicates each element of a sequence.
  */
 class DuplicateSequenceTest {
     @Test fun f1() {
-        val expected = listOf(1, 1, 2, 2, 3, 3)
-        val actual = duplicateSequence(listOf(1, 2, 3))
+        val expected = sequenceOf(1, 1, 2, 2, 3, 3)
+        val actual = duplicateSequence(sequenceOf(1, 2, 3))
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = listOf("a", "a", "a", "a", "b", "b", "b", "b")
-        val actual = duplicateSequence(listOf("a", "a", "b", "b"))
+        val expected = sequenceOf("a", "a", "a", "a", "b", "b", "b", "b")
+        val actual = duplicateSequence(sequenceOf("a", "a", "b", "b"))
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = listOf(Pair(1, 2), Pair(1, 2), Pair(3, 4), Pair(3, 4))
-        val actual = duplicateSequence(listOf(Pair(1, 2), Pair(3, 4)))
+        val expected = sequenceOf(1 to 2, 1 to 2, 3 to 4, 3 to 4)
+        val actual = duplicateSequence(sequenceOf(1 to 2, 3 to 4))
         assertEquals(expected, actual)
     }
 }
