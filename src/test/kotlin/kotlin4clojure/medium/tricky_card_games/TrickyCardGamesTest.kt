@@ -42,7 +42,7 @@ class TrickyCardGamesTest {
 
     @Test fun f4() {
         val f = trickyCardGames(HEARTS)
-        val cards = listOf(Card(HEARTS, 6), Card(HEARTS, 8),Card(DIAMONDS, 10), Card(HEARTS, 4))
+        val cards = listOf(Card(HEARTS, 6), Card(HEARTS, 8), Card(DIAMONDS, 10), Card(HEARTS, 4))
         assertEquals(cards.get(1), f(cards))
     }
 }
