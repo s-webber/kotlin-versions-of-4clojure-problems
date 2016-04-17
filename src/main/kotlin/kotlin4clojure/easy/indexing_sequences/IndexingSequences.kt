@@ -1,5 +1,5 @@
 package kotlin4clojure.easy.indexing_sequences
 
-fun <T> indexingSequences(vararg input: T): Array<Pair<T, Int>> {
+fun <T> indexingSequences(input: Sequence<T>): Sequence<Pair<T, Int>> {
     TODO("Add your solution here")
 }
