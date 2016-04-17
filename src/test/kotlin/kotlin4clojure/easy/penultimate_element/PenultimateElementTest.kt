@@ -18,6 +18,6 @@ class PenultimateElementTest {
     }
 
     @Test fun f3() {
-        assertEquals(Pair(1, 2), penultimateElement(listOf(Pair(1, 2), Pair(3, 4))))
+        assertEquals(1 to 2, penultimateElement(listOf(1 to 2, 3 to 4)))
     }
 }
