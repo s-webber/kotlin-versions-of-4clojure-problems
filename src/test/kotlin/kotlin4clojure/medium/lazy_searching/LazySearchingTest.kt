@@ -36,7 +36,5 @@ class LazySearchingTest {
         assertEquals(64, lazySearching(perfectCubes, powersOf2, atLeastAsLargeAs20))
     }
 
-    fun infiniteRange(start: Int = 1) : Sequence<Int> {
-        return generateSequence(start, {it + 1})
-    }
+    fun infiniteRange(start: Int = 1): Sequence<Int> = generateSequence(start, {it + 1})
 }
