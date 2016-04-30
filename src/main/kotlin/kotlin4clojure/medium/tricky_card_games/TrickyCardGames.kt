@@ -1,8 +1,8 @@
 package kotlin4clojure.medium.tricky_card_games
 
 fun trickyCardGames(trump: Suit?): (List<Card>) -> Card {
-    return { input ->
-        input.reduce { a, b ->
+    return {
+        it.reduce { a, b ->
             when {
                 b.suit == trump && a.suit != trump -> b
                 b.suit == a.suit && b.rank > a.rank -> b
