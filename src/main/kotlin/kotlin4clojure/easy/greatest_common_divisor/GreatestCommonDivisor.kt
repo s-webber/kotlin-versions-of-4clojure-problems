@@ -1,5 +1,9 @@
 package kotlin4clojure.easy.greatest_common_divisor
 
-fun greatestCommonDivisor(arg1: Int, arg2: Int): Int {
-    TODO("Add your solution here")
+tailrec fun greatestCommonDivisor(a: Int, b: Int): Int {
+    if (b == 0) {
+        return a
+    } else {
+        return greatestCommonDivisor(b, a % b)
+    }
 }
