@@ -11,7 +11,7 @@ import org.junit.Test
 class CountOccurrencesTest {
     @Test fun f1() {
         val expected = mapOf(1 to 4, 2 to 2, 3 to 1)
-        val actual = countOccurrences(listOf(1, 1, 2, 3, 4, 1, 1))
+        val actual = countOccurrences(listOf(1, 1, 2, 3, 2, 1, 1))
         assertEquals(expected, actual)
     }
 
