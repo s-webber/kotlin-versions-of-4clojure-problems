@@ -10,20 +10,20 @@ import org.junit.Test
  */
 class PackSequenceTest {
     @Test fun f1() {
-        val expected = sequenceOf(listOf(1, 1), listOf(2), listOf(1, 1, 1), listOf(3, 3))
-        val actual = packSequence(sequenceOf(1, 1, 2, 1, 1, 1, 3, 3))
+        val expected = listOf(listOf(1, 1), listOf(2), listOf(1, 1, 1), listOf(3, 3))
+        val actual = packSequence(sequenceOf(1, 1, 2, 1, 1, 1, 3, 3)).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = sequenceOf(listOf("a", "a"), listOf("b", "b"), listOf("c"))
-        val actual = packSequence(sequenceOf("a", "a", "b", "b", "c"))
+        val expected = listOf(listOf("a", "a"), listOf("b", "b"), listOf("c"))
+        val actual = packSequence(sequenceOf("a", "a", "b", "b", "c")).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = sequenceOf(listOf(1 to 2, 1 to 2), listOf(3 to 4))
-        val actual = packSequence(sequenceOf(1 to 2, 1 to 2, 3 to 4))
+        val expected = listOf(listOf(1 to 2, 1 to 2), listOf(3 to 4))
+        val actual = packSequence(sequenceOf(1 to 2, 1 to 2, 3 to 4)).toList()
         assertEquals(expected, actual)
     }
 }

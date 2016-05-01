@@ -11,14 +11,14 @@ import org.junit.Test
  */
 class SequenceReductionsTest {
     @Test fun f1() {
-        val expected = sequenceOf(0, 1, 3, 6, 10)
-        val actual = sequenceReductions({a, b -> a + b}, generateSequence(0, {it + 1}))
+        val expected = listOf(0, 1, 3, 6, 10)
+        val actual = sequenceReductions({a, b -> a + b}, generateSequence(0, {it + 1})).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = sequenceOf(listOf(1), listOf(1, 2), listOf(1, 2, 3), listOf(1, 2, 3, 4 ))
-        val actual = sequenceReductions({a, b -> a + b}, listOf(1), sequenceOf(2, 3, 4))
+        val expected = listOf(listOf(1), listOf(1, 2), listOf(1, 2, 3), listOf(1, 2, 3, 4 ))
+        val actual = sequenceReductions({a, b -> a + b}, listOf(1), sequenceOf(2, 3, 4)).toList()
         assertEquals(expected, actual)
     }
 

@@ -19,19 +19,19 @@ class PascalsTrapezoidTest {
     }
 
     @Test fun f2() {
-        val expected = sequenceOf(bigInts(1),
-                                  bigInts(1, 1),
-                                  bigInts(1, 2, 1),
-                                  bigInts(1, 3, 3, 1),
-                                  bigInts(1, 4, 6, 4, 1))
-        val seq = pascalsTrapezoid(bigInts(1))
+        val expected = listOf(bigInts(1),
+                              bigInts(1, 1),
+                              bigInts(1, 2, 1),
+                              bigInts(1, 3, 3, 1),
+                              bigInts(1, 4, 6, 4, 1))
+        val seq = pascalsTrapezoid(bigInts(1)).toList()
         assertEquals(expected, seq.take(5))
     }
 
     @Test fun f3() {
-        val expected = sequenceOf(bigInts(3, 1, 2),
-                                  bigInts(3, 4, 3, 2))
-        val seq = pascalsTrapezoid(bigInts(3, 1, 2))
+        val expected = listOf(bigInts(3, 1, 2),
+                              bigInts(3, 4, 3, 2))
+        val seq = pascalsTrapezoid(bigInts(3, 1, 2)).toList()
         assertEquals(expected, seq.take(2))
     }
 
