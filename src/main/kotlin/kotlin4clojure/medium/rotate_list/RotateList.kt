@@ -1,5 +1,14 @@
 package kotlin4clojure.medium.rotate_list
 
 fun <T> rotateList(n: Int, input: List<T>): List<T> {
-    TODO("Add your solution here")
+    val step = n % input.size
+    return input.mapIndexed { i, t ->
+        var idx = i + step
+        if (idx < 0) {
+            idx += input.size
+        } else if (idx >= input.size) {
+            idx -= input.size
+        }
+        input[idx]
+    }.toList()
 }
