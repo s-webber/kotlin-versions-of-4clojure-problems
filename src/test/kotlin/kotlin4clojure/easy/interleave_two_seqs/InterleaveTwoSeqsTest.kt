@@ -17,7 +17,7 @@ class InterleaveTwoSeqsTest {
     }
 
     @Test fun f2() {
-        val expected = listOf(1, 3 ,2, 4)
+        val expected = listOf(1, 3, 2, 4)
         val actual = interleaveTwoSequences(sequenceOf(1, 2), sequenceOf(3, 4, 5, 6)).toList()
         assertEquals(expected, actual)
     }
