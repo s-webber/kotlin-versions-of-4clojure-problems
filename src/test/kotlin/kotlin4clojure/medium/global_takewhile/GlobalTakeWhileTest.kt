@@ -13,13 +13,13 @@ import org.junit.Test
 class GlobalTakeWhileTest {
     @Test fun f1() {
         val expected = listOf(2, 3, 5, 7, 11, 13)
-        val actual = globalTakeWhile(2, {x -> (x %3) == 2}, listOf(2, 3, 5, 7, 11, 13, 17, 19, 23))
+        val actual = globalTakeWhile(4, {x -> (x %3) == 2}, listOf(2, 3, 5, 7, 11, 13, 17, 19, 23))
         assertEquals(expected, actual.toList())
     }
 
     @Test fun f2() {
         val expected = listOf("this", "is", "a", "sentence")
-        val actual = globalTakeWhile(3, {x -> x.equals("a")}, listOf("this", "is", "a", "sentence", "i", "wrote"))
+        val actual = globalTakeWhile(3, {x -> x.contains('i')}, listOf("this", "is", "a", "sentence", "i", "wrote"))
         assertEquals(expected, actual.toList())
     }
 
