@@ -10,20 +10,20 @@ import org.junit.Test
  */
 class CompressSequenceTest {
     @Test fun f1() {
-        val expected = "Leroy".asSequence()
+        val expected = "Leroy".toList()
         val input = "Leeeeeerrroyyy".asSequence()
-        assertEquals(expected, compressSequence(input))
+        assertEquals(expected, compressSequence(input).toList())
     }
 
     @Test fun f2() {
-        val expected = sequenceOf(1, 2, 3, 2, 3)
+        val expected = listOf(1, 2, 3, 2, 3)
         val input = sequenceOf(1, 1, 2, 3, 3, 2, 2, 3)
-        assertEquals(expected, compressSequence(input))
+        assertEquals(expected, compressSequence(input).toList())
     }
 
     @Test fun f3() {
-        val expected = sequenceOf(1 to 2, 3 to 4, 1 to 2)
+        val expected = listOf(1 to 2, 3 to 4, 1 to 2)
         val input = sequenceOf(1 to 2, 1 to 2, 3 to 4, 1 to 2)
-        assertEquals(expected, compressSequence(input))
+        assertEquals(expected, compressSequence(input).toList())
     }
 }

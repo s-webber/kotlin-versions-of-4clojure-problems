@@ -6,6 +6,4 @@ fun trickyCardGames(trump: Suit?): (List<Card>) -> Card {
 
 data class Card(val suit: Suit, val rank: Int)
 
-enum class Suit {
-    SPADES, HEARTS, DIAMONDS, CLUBS
-}
+enum class Suit { SPADES, HEARTS, DIAMONDS, CLUBS }

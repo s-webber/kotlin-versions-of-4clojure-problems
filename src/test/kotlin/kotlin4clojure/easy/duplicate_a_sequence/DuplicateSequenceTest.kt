@@ -10,20 +10,20 @@ import org.junit.Test
  */
 class DuplicateSequenceTest {
     @Test fun f1() {
-        val expected = sequenceOf(1, 1, 2, 2, 3, 3)
-        val actual = duplicateSequence(sequenceOf(1, 2, 3))
+        val expected = listOf(1, 1, 2, 2, 3, 3)
+        val actual = duplicateSequence(sequenceOf(1, 2, 3)).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = sequenceOf("a", "a", "a", "a", "b", "b", "b", "b")
-        val actual = duplicateSequence(sequenceOf("a", "a", "b", "b"))
+        val expected = listOf("a", "a", "a", "a", "b", "b", "b", "b")
+        val actual = duplicateSequence(sequenceOf("a", "a", "b", "b")).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = sequenceOf(1 to 2, 1 to 2, 3 to 4, 3 to 4)
-        val actual = duplicateSequence(sequenceOf(1 to 2, 3 to 4))
+        val expected = listOf(1 to 2, 1 to 2, 3 to 4, 3 to 4)
+        val actual = duplicateSequence(sequenceOf(1 to 2, 3 to 4)).toList()
         assertEquals(expected, actual)
     }
 }

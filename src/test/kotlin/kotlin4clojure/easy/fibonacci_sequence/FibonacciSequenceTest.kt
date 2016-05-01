@@ -10,14 +10,14 @@ import org.junit.Test
  */
 class FibonacciSequenceTest {
     @Test fun f1() {
-        assertEquals(listOf(1, 1, 2), fibonacciSequence(3))
+        assertEquals(listOf(1L, 1L, 2L), fibonacciSequence(3))
     }
 
     @Test fun f2() {
-        assertEquals(listOf(1, 1, 2, 3, 5, 8), fibonacciSequence(6))
+        assertEquals(listOf(1L, 1L, 2L, 3L, 5L, 8L), fibonacciSequence(6))
     }
 
     @Test fun f3() {
-        assertEquals(listOf(1, 1, 2, 3, 5, 8, 13, 21), fibonacciSequence(8))
+        assertEquals(listOf(1L, 1L, 2L, 3L, 5L, 8L, 13L, 21L), fibonacciSequence(8))
     }
 }

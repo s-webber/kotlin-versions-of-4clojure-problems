@@ -55,7 +55,5 @@ class PalindromicNumbersTest {
         assertEquals(9102019, actual)
     }
 
-    fun sequenceOfLongs(vararg input: Long) : Sequence<Long> {
-    TODO("Add your solution here")
-    }
+    fun sequenceOfLongs(vararg input: Long) = input.asSequence()
 }
