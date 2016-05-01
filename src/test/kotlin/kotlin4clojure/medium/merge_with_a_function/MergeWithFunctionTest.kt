@@ -15,7 +15,7 @@ class MergeWithFunctionTest {
     @Test fun f1() {
         val expected = mapOf("a" to 4, "b" to 6, "c" to 20)
         fun f(x: Int, y: Int) = x * y
-        val m1 =  mapOf("a" to 2, "b" to 2, "c" to 5)
+        val m1 =  mapOf("a" to 2, "b" to 3, "c" to 4)
         val m2 = mapOf("a" to 2)
         val m3 = mapOf("b" to 2)
         val m4 = mapOf("c" to 5)
