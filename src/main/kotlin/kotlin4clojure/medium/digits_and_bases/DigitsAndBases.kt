@@ -8,7 +8,7 @@ fun digits(input: Int, base: Int): List<Int> {
         return generateSequence({
             if (n > 0) {
                 val result = n % base
-                n = n / base
+                n /= base
                 result
             } else {
                 null

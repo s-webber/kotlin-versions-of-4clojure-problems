@@ -5,16 +5,16 @@ fun sumOfSquareOfDigits(input: IntRange): Int {
 }
 
 fun isLessThanSumOfSquareOfDigits(input: Int): Boolean {
-    val sumOfSquareOfDigits = toDigits(input).map { it * it }.sum()
+    val sumOfSquareOfDigits = input.toDigits().map { it * it }.sum()
     return input < sumOfSquareOfDigits
 }
 
-fun toDigits(input: Int): Sequence<Int> {
-    var n = input
+fun Int.toDigits(): Sequence<Int> {
+    var n = this
     return generateSequence({
         if (n > 0) {
             val result = n % 10
-            n = n / 10
+            n /= 10
             result
         } else {
             null
