@@ -22,7 +22,7 @@ import org.junit.Test
  */
 class ParenthesesAgainTest {
     @Test fun f1() {
-        val expected = listOf(setOf(""), setOf("()"), setOf("()()", "(()))"))
+        val expected = listOf(setOf(""), setOf("()"), setOf("()()", "(())"))
         val actual = (0..2).map(::parenthesesAgain)
         assertEquals(expected, actual)
     }
