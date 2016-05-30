@@ -1,6 +1,6 @@
 package kotlin4clojure.hard.tree_reparenting
 
-fun treeReparenting(id: String, tree: Node): Node {
+fun treeReparenting(id: String, tree: Node): Node? {
     TODO("Add your solution here")
 }
 

@@ -37,12 +37,12 @@ class TreeReparentingTest {
 
     @Test fun f2() {
         val expected = treeOf("a", treeOf("t", treeOf("e")))
-        val actual = treeReparenting("a", treeOf("t", treeOf("e", treeOf("a"))))
+        val actual = treeReparenting("a", treeOf("t", treeOf("e"), treeOf("a")))
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = treeOf("e", treeOf("t", treeOf("e")))
+        val expected = treeOf("e", treeOf("t", treeOf("a")))
         val actual = treeReparenting("e", treeOf("a", treeOf("t", treeOf("e"))))
         assertEquals(expected, actual)
     }
