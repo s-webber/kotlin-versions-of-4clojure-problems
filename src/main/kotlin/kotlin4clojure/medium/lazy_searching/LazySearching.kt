@@ -9,6 +9,5 @@ tailrec fun lazySearching(input: List<Sequence<Int>>): Int? {
     }
 }
 
-private fun maxOrNull(input: List<Sequence<Int>>): Int? {
-    return input.map { it.firstOrNull() ?: return null }.max()
-}
+private fun maxOrNull(input: List<Sequence<Int>>) =
+    input.map { it.firstOrNull() ?: return null }.max()
