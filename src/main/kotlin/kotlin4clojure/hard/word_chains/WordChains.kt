@@ -7,7 +7,7 @@ private fun isChain(current: String, rest: Set<String>) : Boolean =
     rest.isEmpty() || rest.any { isNeighbourly(current to it) && isChain(it, rest - it) }
 
 private fun isNeighbourly(words: Pair<String, String>) : Boolean {
-    val (first, second) = order(words)
+    val (first, second) = sort(words)
 
     return when (second.length - first.length) {
         0 -> isNeighbourlySameLength(first, second)
@@ -16,8 +16,8 @@ private fun isNeighbourly(words: Pair<String, String>) : Boolean {
     }
 }
 
-private fun order(p : Pair<String, String>) =
-        if (p.first.length > p.second.length) Pair(p.second, p.first) else p
+private fun sort(p : Pair<String, String>) =
+    if (p.first.length > p.second.length) Pair(p.second, p.first) else p
 
 private fun isNeighbourlySameLength(first: String, second: String) : Boolean {
     assert(first.length == second.length)
