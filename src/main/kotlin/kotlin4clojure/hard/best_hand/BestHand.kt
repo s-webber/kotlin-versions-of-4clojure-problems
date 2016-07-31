@@ -3,7 +3,6 @@ package kotlin4clojure.hard.best_hand
 import kotlin4clojure.hard.best_hand.Rank.*
 import kotlin4clojure.easy.recognize_playing_cards.recognizePlayingCards
 import kotlin4clojure.easy.recognize_playing_cards.Card
-import kotlin4clojure.easy.recognize_playing_cards.Suit.*
 
 fun rank(vararg input: String): Rank {
     val cards = input.map(::recognizePlayingCards).toList()
@@ -56,12 +55,6 @@ fun twoPair(sortedSizeByRank: List<Int>) =
 
 fun pair(sortedSizeByRank: List<Int>) =
     sortedSizeByRank[0] == 2
-
-val suitMappings =
-    mapOf('S' to SPADES, 'H' to HEARTS, 'D' to DIAMONDS, 'C' to CLUBS)
-
-val rankMappings =
-    listOf('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A').mapIndexed { i, c -> Pair(c, i) }.toMap()
 
 enum class Rank {
     STRAIGHT_FLUSH,
