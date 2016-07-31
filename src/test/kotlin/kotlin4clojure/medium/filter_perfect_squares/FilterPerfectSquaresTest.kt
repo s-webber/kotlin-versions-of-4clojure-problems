@@ -15,6 +15,6 @@ class FilterPerfectSquaresTest {
     }
 
     @Test fun f2() {
-        assertEquals("16,25,26", filterPerfectSquares("15,16,25,36,37"))
+        assertEquals("16,25,36", filterPerfectSquares("15,16,25,36,37"))
     }
 }
