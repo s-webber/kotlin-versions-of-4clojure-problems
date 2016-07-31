@@ -26,7 +26,7 @@ class TriangleMinimalPathTest {
                           listOf(2, 4),
                         listOf(1, 9, 3),
                        listOf(9, 9, 2, 4),
-                     listOf(4, 6, 7, 8, 8),
+                     listOf(4, 6, 6, 7, 8),
                     listOf(5, 7, 3, 5, 1, 4))
         val expected = 20 // 3->4->3->2->7->1
         assertEquals(expected, triangleMinimalPath(input))
