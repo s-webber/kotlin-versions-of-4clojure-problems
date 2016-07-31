@@ -12,24 +12,30 @@ import org.junit.Test
  */
 class IntervalsTest {
     @Test fun f1() {
-        assertEquals(listOf(1 to 3), intervals(1, 2, 3))
+        val input = listOf(1, 2, 3)
+        val expected = listOf(1 to 3)
+        assertEquals(expected, intervals(input).toList())
     }
 
     @Test fun f2() {
-        assertEquals(listOf(1 to 3, 8 to 10), intervals(10, 9, 8, 1, 2, 3))
+        val input = listOf(10, 9, 8, 1, 2, 3)
+        val expected = listOf(1 to 3, 8 to 10)
+        assertEquals(expected, intervals(input).toList())
     }
 
     @Test fun f3() {
-        assertEquals(listOf(1 to 1), intervals(1, 1, 1, 1, 1, 1, 1))
+        val input = listOf(1, 1, 1, 1, 1, 1, 1)
+        val expected = listOf(1 to 1)
+        assertEquals(expected, intervals(input).toList())
     }
 
     @Test fun f4() {
-        assertEquals(emptyList(), intervals())
+        assertEquals(emptyList(), intervals(emptyList()).toList())
     }
 
     @Test fun f5() {
+        val input = listOf(19, 4, 17, 1, 3, 10, 2, 13, 13, 2, 16, 4, 2, 15, 13, 9, 6, 14, 2, 11)
         val expected = listOf(1 to 4, 6 to 6, 9 to 11, 13 to 17, 19 to 19)
-        val actual = intervals(19, 4, 17, 1, 3, 10, 2, 13, 13, 2, 16, 4, 2, 15, 13, 9, 6, 14, 2, 11)
-        assertEquals(expected, actual)
+        assertEquals(expected, intervals(input).toList())
     }
 }
