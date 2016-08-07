@@ -12,7 +12,4 @@ fun fits(line: String, word: String) =
     line.length == word.length && (0..word.length - 1).all { line[it] == '_' || line[it] == word[it] }
 
 fun rotate(grid: List<String>) =
-    (0..grid.first().length - 1).map {
-        val idx = it;
-        grid.map { it[idx] }
-    }.map { it.joinToString("") }
+    (0..grid.first().length - 1).map { idx -> grid.map { it[idx] } }.map { it.joinToString("") }
