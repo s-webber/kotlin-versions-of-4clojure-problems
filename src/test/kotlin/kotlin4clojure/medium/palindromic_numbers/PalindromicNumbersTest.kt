@@ -13,23 +13,23 @@ import org.junit.Test
  */
 class PalindromicNumbersTest {
     @Test fun f1() {
-        val expected = sequenceOfLongs(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55,
-                                       66, 77, 88, 99, 101, 111, 121, 131, 141, 151, 161)
-        val actual = palindromicNumbers(0).take(26)
+        val expected =listOfLongs(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55,
+                                  66, 77, 88, 99, 101, 111, 121, 131, 141, 151, 161)
+        val actual = palindromicNumbers(0).take(26).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = sequenceOfLongs(171, 181, 191, 202, 212, 222, 232, 242,
-                                       252, 262, 272, 282, 292, 303, 313, 323)
-        val actual = palindromicNumbers(162).take(16)
+        val expected = listOfLongs(171, 181, 191, 202, 212, 222, 232, 242,
+                                   252, 262, 272, 282, 292, 303, 313, 323)
+        val actual = palindromicNumbers(162).take(16).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = sequenceOfLongs(1234554321, 1234664321, 1234774321,
-                                       1234884321, 1234994321, 1235005321)
-        val actual = palindromicNumbers(1234550000).take(6)
+        val expected = listOfLongs(1234554321, 1234664321, 1234774321,
+                                   1234884321, 1234994321, 1235005321)
+        val actual = palindromicNumbers(1234550000).take(6).toList()
         assertEquals(expected, actual)
     }
 
@@ -51,9 +51,9 @@ class PalindromicNumbersTest {
     }
 
     @Test fun f7() {
-        val actual = palindromicNumbers(0).drop(10100).first()
+        val actual = palindromicNumbers(0).drop(10101).first()
         assertEquals(9102019, actual)
     }
 
-    fun sequenceOfLongs(vararg input: Long) = input.asSequence()
+    fun listOfLongs(vararg input: Long) = input.asList()
 }
