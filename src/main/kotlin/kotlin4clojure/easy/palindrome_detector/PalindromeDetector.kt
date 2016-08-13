@@ -5,8 +5,8 @@ fun palindromeDetector(vararg input: Any): Boolean {
     val middle = input.size / 2
     for (i in 0..middle) {
         if (input[i] != input[maxIdx - i]) {
-            return false;
+            return false
         }
     }
-    return true;
+    return true
 }
