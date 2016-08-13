@@ -12,13 +12,13 @@ import org.junit.Test
 class PowerSetTest {
     @Test fun f1() {
         val expected = setOf(setOf(1, "a"), setOf("a"), emptySet(), setOf(1))
-        val actual = powerSet(setOf(1, "a"))
+        val actual = setOf(1, "a").powerSet()
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
         val expected = setOf(emptySet<Any>())
-        val actual = powerSet(emptySet<Any>())
+        val actual = emptySet<Any>().powerSet()
         assertEquals(expected, actual)
     }
 
@@ -27,11 +27,11 @@ class PowerSetTest {
                              setOf(1), setOf(2), setOf(3),
                              setOf(1, 2), setOf(1, 3), setOf(2, 3),
                              setOf(1, 2, 3))
-        val actual = powerSet(setOf(1, 2, 3))
+        val actual = setOf(1, 2, 3).powerSet()
         assertEquals(expected, actual)
     }
 
     @Test fun f4() {
-        assertEquals(1024, powerSet((0..9).toHashSet()).size)
+        assertEquals(1024, ((0..9).toHashSet()).powerSet().size)
     }
 }
