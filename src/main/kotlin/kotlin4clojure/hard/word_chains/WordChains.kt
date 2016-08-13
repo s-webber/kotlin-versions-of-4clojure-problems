@@ -28,7 +28,7 @@ private fun isNeighbourlySameLength(first: String, second: String) : Boolean {
             return false
         }
     }
-    return true;
+    return true
 }
 
 private fun isNeighbourlyDifferentLength(first: String, second: String) : Boolean {
