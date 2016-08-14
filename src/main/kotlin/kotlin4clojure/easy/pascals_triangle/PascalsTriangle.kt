@@ -1,7 +1,7 @@
 package kotlin4clojure.easy.pascals_triangle
 
+import kotlin4clojure.easy.pascals_trapezoid.pascalsTrapezoid
 import java.math.BigInteger
 
-fun pascalsTriangle(input: Int): List<BigInteger> {
-    TODO("Add your solution here")
-}
+fun pascalsTriangle(input: Int) =
+    pascalsTrapezoid(listOf(BigInteger.ONE)).drop(input - 1).first()
