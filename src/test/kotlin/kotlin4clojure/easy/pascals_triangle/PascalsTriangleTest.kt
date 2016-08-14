@@ -2,6 +2,7 @@ package kotlin4clojure.easy.pascals_triangle
 
 import kotlin.test.assertEquals
 import org.junit.Test
+import java.math.BigInteger
 
 /**
  * 97. Pascal's Triangle
@@ -16,24 +17,26 @@ import org.junit.Test
  */
 class PascalsTriangleTest {
     @Test fun f1() {
-        val expected = listOf(1)
+        val expected = bigInts(1)
         val actual = pascalsTriangle(1)
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = listOf(listOf(1),
-                              listOf(1, 1),
-                              listOf(1, 2, 1),
-                              listOf(1, 3, 3, 1),
-                              listOf(1, 4, 6, 4, 1))
+        val expected = listOf(bigInts(1),
+                              bigInts(1, 1),
+                              bigInts(1, 2, 1),
+                              bigInts(1, 3, 3, 1),
+                              bigInts(1, 4, 6, 4, 1))
         val actual = (1..5).map(::pascalsTriangle).toList()
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = listOf(1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1)
+        val expected = bigInts(1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1)
         val actual = pascalsTriangle(11)
         assertEquals(expected, actual)
     }
+
+    fun bigInts(vararg input: Int) = input.map { BigInteger(it.toString()) }.toList()
 }
