@@ -16,7 +16,7 @@ class ReverseInterleaveTest {
     }
 
     @Test fun f2() {
-        val expected = listOf(listOf(1, 3, 6), listOf(1, 4, 7), listOf(2, 5, 8))
+        val expected = listOf(listOf(0, 3, 6), listOf(1, 4, 7), listOf(2, 5, 8))
         val actual = reverseInterleave((0..8).toList(), 3)
         assertEquals(expected, actual)
     }
