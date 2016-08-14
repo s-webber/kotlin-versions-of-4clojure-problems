@@ -24,21 +24,21 @@ class PascalsTrapezoidTest {
                               bigInts(1, 2, 1),
                               bigInts(1, 3, 3, 1),
                               bigInts(1, 4, 6, 4, 1))
-        val seq = pascalsTrapezoid(bigInts(1)).toList()
-        assertEquals(expected, seq.take(5))
+        val actual = pascalsTrapezoid(bigInts(1)).take(5).toList()
+        assertEquals(expected, actual)
     }
 
     @Test fun f3() {
         val expected = listOf(bigInts(3, 1, 2),
                               bigInts(3, 4, 3, 2))
-        val seq = pascalsTrapezoid(bigInts(3, 1, 2)).toList()
-        assertEquals(expected, seq.take(2))
+        val actual = pascalsTrapezoid(bigInts(3, 1, 2)).take(2).toList()
+        assertEquals(expected, actual)
     }
 
     @Test fun f4() {
         val a = pascalsTrapezoid(bigInts(2, 4, 2))
         val b = pascalsTrapezoid(bigInts(2, 2))
-        assertEquals(a.take(100), b.take(101).drop(1))
+        assertEquals(a.take(100).toList(), b.take(101).drop(1).toList())
     }
 
     fun bigInts(vararg input: Int) = input.map { BigInteger(it.toString()) }.toList()
