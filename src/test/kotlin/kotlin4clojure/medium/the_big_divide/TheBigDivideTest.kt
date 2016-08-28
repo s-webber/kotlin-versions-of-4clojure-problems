@@ -49,7 +49,7 @@ class TheBigDivideTest {
 
     @Test fun f7() {
         val expected = bigInt("4530161696788274281")
-        val actual = bigDivide(bigInt("1000000000000"), bigInt(1597), bigInt(3571))
+        val actual = bigDivide(bigInt("100000000000"), bigInt(1597), bigInt(3571))
         assertEquals(expected, actual)
     }
 
