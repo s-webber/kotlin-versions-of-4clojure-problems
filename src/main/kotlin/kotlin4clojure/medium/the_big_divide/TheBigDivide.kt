@@ -4,14 +4,15 @@ import java.math.BigInteger
 
 private val TWO = BigInteger("2")
 
-fun bigDivide(n: BigInteger, a: BigInteger, b: BigInteger): BigInteger {
-    val max = n - BigInteger.ONE
-    val c = a * b
-    val sumA = f(max, a)
-    val sumB = f(max, b)
-    val sumC = f(max, c)
-    return ((sumA + sumB) - sumC) / TWO
+fun bigDivide(maxExclusive: BigInteger, a: BigInteger, b: BigInteger): BigInteger {
+    val maxInclusive = maxExclusive - BigInteger.ONE
+    val sumDivisibleByA = sumDivisible(maxInclusive, a)
+    val sumDivisibleByB = sumDivisible(maxInclusive, b)
+    val sumDivisibleByBoth = sumDivisible(maxInclusive, a * b)
+    return (sumDivisibleByA + sumDivisibleByB) - sumDivisibleByBoth
 }
 
-fun f(max: BigInteger, n: BigInteger) =
-    (max / n) * ((max - max.mod(n)) + n)
+// calculates the sum of all natural numbers <= max (first argument)
+// which are evenly divisible by the coprime n (second).
+fun sumDivisible(max: BigInteger, n: BigInteger) =
+    ((max / n) * ((max - max.mod(n)) + n)) / TWO
