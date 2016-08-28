@@ -13,6 +13,6 @@ fun bigDivide(maxExclusive: BigInteger, a: BigInteger, b: BigInteger): BigIntege
 }
 
 // calculates the sum of all natural numbers <= max (first argument)
-// which are evenly divisible by the coprime n (second).
+// which are evenly divisible by the coprime n (second argument).
 fun sumDivisible(max: BigInteger, n: BigInteger) =
     ((max / n) * ((max - max.mod(n)) + n)) / TWO
