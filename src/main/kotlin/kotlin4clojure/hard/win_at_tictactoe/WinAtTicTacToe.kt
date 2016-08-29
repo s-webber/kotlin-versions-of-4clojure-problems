@@ -10,7 +10,7 @@ fun winAtTicTacToe(player: Cell, board: Array<Array<Cell>>): Set<Pair<Int, Int>>
         it.groupBy { it.second }
     }.map {
         val numPlayersCells = it[player]?.size ?: 0
-        val emptyCell = it[Cell.E]?.first() ?: null
+        val emptyCell = it[Cell.E]?.first()
         if (numPlayersCells == 2 && emptyCell != null) {
             emptyCell.first
         } else {
