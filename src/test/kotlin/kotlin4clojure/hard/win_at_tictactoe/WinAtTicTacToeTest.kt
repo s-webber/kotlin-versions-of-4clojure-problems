@@ -3,7 +3,7 @@ package kotlin4clojure.hard.win_at_tictactoe
 import kotlin.test.assertEquals
 import org.junit.Test
 
-import kotlin4clojure.hard.win_at_tictactoe.Cell.*
+import kotlin4clojure.hard.analyze_a_tictactoe_board.Cell.*
 
 /**
  * 119. Win at Tic-Tac-Toe
