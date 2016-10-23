@@ -1,5 +1,7 @@
 package kotlin4clojure.hard.love_triangle
 
+import kotlin4clojure.util.plus
+
 val ROCK = '0'
 
 val DIRECTIONS = listOf(listOf( 1 to  0,  0 to  1),
@@ -33,7 +35,7 @@ fun toMineralSet(input: IntArray) : Set<Pair<Int, Int>> {
 
 tailrec fun getMaxShape(mineralSet: Set<Pair<Int, Int>>, direction: List<Pair<Int, Int>>, currentLayer: Set<Pair<Int, Int>>, currentSize: Int): Int {
     val nextLayer = currentLayer.flatMap { coord ->
-        direction.map { coord.first + it.first to coord.second + it.second }
+        direction.map { coord + it }
     }.toSet()
     if (!mineralSet.containsAll(nextLayer)) {
         return currentSize

@@ -1,5 +1,7 @@
 package kotlin4clojure.hard.analyze_reversi
 
+import kotlin4clojure.util.plus
+
 fun analyzeReversi(board: List<List<Cell>>, player: Cell): Map<Pair<Int, Int>, Set<Pair<Int, Int>>> {
     val coords = toCoordsMap(board)
     return coords.filterValues { it == player }
@@ -24,7 +26,7 @@ fun findLines(coords: Map<Pair<Int, Int>, Cell>, coord: Pair<Int, Int>, cell: Ce
     }.filterNotNull()
 
 tailrec fun findLine(coords: Map<Pair<Int, Int>, Cell>, coord: Pair<Int, Int>, cell: Cell, move: Pair<Int, Int>, line: List<Pair<Int, Int>> = emptyList()): List<Pair<Int, Int>> {
-    val next = Pair(coord.first + move.first, coord.second + move.second)
+    val next = coord + move
     return when (coords[next]) {
         null -> emptyList()
         cell -> emptyList()

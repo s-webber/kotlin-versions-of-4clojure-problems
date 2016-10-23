@@ -1,5 +1,7 @@
 package kotlin4clojure.hard.for_science
 
+import kotlin4clojure.util.plus
+
 fun forScience(vararg input: String): Boolean {
     val cells = input.mapIndexed { rowIdx, line ->
         line.mapIndexed { colIdx, cell ->
@@ -28,6 +30,6 @@ fun forScience(vararg input: String): Boolean {
 }
 
 fun adjacent(cell: Pair<Int, Int>) =
-    moves.map { Pair(cell.first + it.first, cell.second + it.second) }
+    moves.map { cell + it }
 
 val moves = listOf(Pair(0, 1), Pair(0, -1), Pair(1, 0), Pair(-1, 0))
