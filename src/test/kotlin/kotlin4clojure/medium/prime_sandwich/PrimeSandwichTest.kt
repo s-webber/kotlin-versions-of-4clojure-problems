@@ -1,5 +1,6 @@
 package kotlin4clojure.medium.prime_sandwich
 
+import kotlin4clojure.util.infiniteSequence
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -22,6 +23,6 @@ class PrimeSandwichTest {
     }
 
     @Test fun f3() {
-        assertEquals(1103, generateSequence(0, { it + 1 }).filter(::primeSandwich).elementAt(15))
+        assertEquals(1103, infiniteSequence().filter(::primeSandwich).elementAt(15))
     }
 }

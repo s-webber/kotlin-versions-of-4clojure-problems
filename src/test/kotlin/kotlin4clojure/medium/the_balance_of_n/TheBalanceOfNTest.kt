@@ -1,5 +1,6 @@
 package kotlin4clojure.medium.the_balance_of_n
 
+import kotlin4clojure.util.infiniteSequence
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -42,7 +43,7 @@ class TheBalanceOfNTest {
 
     @Test fun f8() {
         val expected = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101)
-        val actual = generateSequence(0, { it + 1 }).filter(::theBalanceOfN).take(20).toList()
+        val actual = infiniteSequence().filter(::theBalanceOfN).take(20).toList()
         assertEquals(expected, actual)
     }
 }

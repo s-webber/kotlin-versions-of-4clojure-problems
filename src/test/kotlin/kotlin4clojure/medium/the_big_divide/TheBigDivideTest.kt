@@ -1,8 +1,8 @@
 package kotlin4clojure.medium.the_big_divide
 
+import kotlin4clojure.util.bigInt
 import kotlin.test.assertEquals
 import org.junit.Test
-import java.math.BigInteger
 
 /**
  * 148. The Big Divide
@@ -52,6 +52,4 @@ class TheBigDivideTest {
         val actual = bigDivide(bigInt("100000000000"), bigInt(1597), bigInt(3571))
         assertEquals(expected, actual)
     }
-
-    fun bigInt(n: Any) = BigInteger(n.toString())
 }

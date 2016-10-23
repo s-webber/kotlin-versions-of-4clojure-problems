@@ -1,5 +1,6 @@
 package kotlin4clojure.medium.sequence_reductions
 
+import kotlin4clojure.util.infiniteSequence
 import kotlin.test.assertEquals
 import org.junit.Test
 
@@ -12,7 +13,7 @@ import org.junit.Test
 class SequenceReductionsTest {
     @Test fun f1() {
         val expected = listOf(0, 1, 3, 6, 10)
-        val actual = sequenceReductions({a, b -> a + b}, generateSequence(0, {it + 1})).take(5).toList()
+        val actual = sequenceReductions({a, b -> a + b}, infiniteSequence()).take(5).toList()
         assertEquals(expected, actual)
     }
 
