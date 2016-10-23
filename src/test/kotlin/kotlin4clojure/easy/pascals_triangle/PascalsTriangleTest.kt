@@ -1,8 +1,8 @@
 package kotlin4clojure.easy.pascals_triangle
 
+import kotlin4clojure.util.bigInts
 import kotlin.test.assertEquals
 import org.junit.Test
-import java.math.BigInteger
 
 /**
  * 97. Pascal's Triangle
@@ -37,6 +37,4 @@ class PascalsTriangleTest {
         val actual = pascalsTriangle(11)
         assertEquals(expected, actual)
     }
-
-    fun bigInts(vararg input: Int) = input.map { BigInteger(it.toString()) }.toList()
 }

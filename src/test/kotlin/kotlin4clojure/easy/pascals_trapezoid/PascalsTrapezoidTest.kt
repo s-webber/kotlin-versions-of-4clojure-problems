@@ -1,8 +1,8 @@
 package kotlin4clojure.easy.pascals_trapezoid
 
+import kotlin4clojure.util.bigInts
 import kotlin.test.assertEquals
 import org.junit.Test
-import java.math.BigInteger
 
 /**
  * 147. Pascal's Trapezoid
@@ -40,6 +40,4 @@ class PascalsTrapezoidTest {
         val b = pascalsTrapezoid(bigInts(2, 2))
         assertEquals(a.take(100).toList(), b.take(101).drop(1).toList())
     }
-
-    fun bigInts(vararg input: Int) = input.map { BigInteger(it.toString()) }.toList()
 }
