@@ -3,16 +3,14 @@ package kotlin4clojure.easy.pack_a_sequence
 fun <T: Any> packSequence(input: Sequence<T>): Sequence<List<T>> {
     var remaining = input
 
-    fun next(): List<T>? {
+    return generateSequence {
         val value = remaining.firstOrNull()
         if (value == null) {
-            return null
+            null
         } else {
             val result = remaining.takeWhile { it == value }.toList()
             remaining = remaining.drop(result.size)
-            return result
+            result
         }
     }
-
-    return generateSequence(::next)
 }

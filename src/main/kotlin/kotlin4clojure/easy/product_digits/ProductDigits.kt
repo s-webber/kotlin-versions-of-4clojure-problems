@@ -2,7 +2,8 @@ package kotlin4clojure.easy.product_digits
 
 fun productDigits(a: Int, b: Int): List<Int> {
     var number = a * b
-    return generateSequence({
+
+    return generateSequence{
         if (number > 0) {
             val result = number % 10
             number /= 10
@@ -10,5 +11,5 @@ fun productDigits(a: Int, b: Int): List<Int> {
         } else {
             null
         }
-    }).toList().asReversed()
+    }.toList().asReversed()
 }

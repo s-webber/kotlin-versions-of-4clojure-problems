@@ -5,7 +5,7 @@ fun <T: Any> interleaveTwoSequences(a: Sequence<T>, b: Sequence<T>): Sequence<T>
     var remainingB = b
     var selectFromA = false
 
-    fun next(): T? {
+    return generateSequence {
         selectFromA = !selectFromA
 
         val nextB = remainingB.firstOrNull()
@@ -13,12 +13,10 @@ fun <T: Any> interleaveTwoSequences(a: Sequence<T>, b: Sequence<T>): Sequence<T>
         if (selectFromA && nextB != null) {
             val nextA = remainingA.firstOrNull()
             remainingA = remainingA.drop(1)
-            return nextA
+            nextA
         } else {
             remainingB = remainingB.drop(1)
-            return nextB
+            nextB
         }
     }
-
-    return generateSequence(::next)
 }
