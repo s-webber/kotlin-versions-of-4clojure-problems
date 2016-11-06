@@ -1,10 +1,8 @@
 package kotlin4clojure.hard.tree_reparenting
 
-fun treeReparenting(id: String, tree: Node): Node? {
-    return find(id, tree, emptyList())
-}
+fun treeReparenting(id: String, tree: Node) = find(id, tree, emptyList())
 
-fun find(target: String, next: Node, parents: List<Node>): Node? {
+private fun find(target: String, next: Node, parents: List<Node>): Node? {
     if (target.equals(next.id)) {
         if (parents.isEmpty()) {
             return next
@@ -23,7 +21,7 @@ fun find(target: String, next: Node, parents: List<Node>): Node? {
     }
 }
 
-fun restructure(n: Node, newParent: Node, oldParents: List<Node>): Node {
+private fun restructure(n: Node, newParent: Node, oldParents: List<Node>): Node {
     val childrenMinusNewParent = n.children.filterNot { newParent == it }
     if (oldParents.isEmpty()) {
         return Node(n.id, childrenMinusNewParent)

@@ -11,13 +11,7 @@ tailrec fun numberMaze(input: Set<Int?>, target: Int, ctr: Int): Int {
     }
 }
 
-fun next(i: Int?): List<Int?> {
-    return if (i==null) {
-        emptyList()
-    } else {
-        functions.map { it.invoke(i) }
-    }
-}
+fun next(i: Int?) = if (i==null) emptyList() else functions.map { it.invoke(i) }
 
 val functions = listOf(::double, ::half, ::add2)
 

@@ -17,5 +17,4 @@ fun <T> graphTour(vararg input: Pair<T, T>): Boolean {
     } < 3
 }
 
-fun <T> Map<T, List<T>>.append(k: T, v: T): Map<T, List<T>> =
-    this + (k to (this[k]?.plus(v) ?: listOf(v)))
+fun <T> Map<T, List<T>>.append(k: T, v: T) = this + (k to (this[k]?.plus(v) ?: listOf(v)))

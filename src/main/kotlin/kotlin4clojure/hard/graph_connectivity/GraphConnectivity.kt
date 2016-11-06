@@ -18,6 +18,4 @@ tailrec fun <T> isConnected(visited: Set<T>, rest: Set<Set<T>>): Boolean {
     return isConnected(visited + intersection.flatten(), rest - intersection)
 }
 
-fun <T> Collection<T>.containsAny(elements: Collection<T>): Boolean {
-    return this.any { elements.contains(it) }
-}
+fun <T> Collection<T>.containsAny(elements: Collection<T>) = this.any { elements.contains(it) }
