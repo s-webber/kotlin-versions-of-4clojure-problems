@@ -1,8 +1,6 @@
 package kotlin4clojure.medium.parentheses_again
 
-fun parenthesesAgain(size: Int): Set<String> {
-    return recursiveSolve(size, mapOf(0 to setOf("")))
-}
+fun parenthesesAgain(size: Int) = recursiveSolve(size, mapOf(0 to setOf("")))
 
 tailrec fun recursiveSolve(target: Int, cache: Map<Int, Set<String>>): Set<String>  {
     val current = cache.size
@@ -22,9 +20,9 @@ fun calculateNextPermutations(cache: Map<Int, Set<String>>): Set<String> {
     })
 }
 
-fun combine(a: Set<String>, b: Set<String>): Set<String> {
-    return a.map {
+fun combine(a: Set<String>, b: Set<String>) =
+    a.map {
         val left = it
         b.map { left + it }
     }.flatten().toSet()
-}
+

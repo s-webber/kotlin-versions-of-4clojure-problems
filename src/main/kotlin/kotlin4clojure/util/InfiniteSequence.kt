@@ -5,4 +5,4 @@ package kotlin4clojure.util
  *
  * @param start the first value to be returned by the sequence. By default `0`.
  */
-fun infiniteSequence(start: Int = 0): Sequence<Int> = generateSequence(start, {it + 1})
+fun infiniteSequence(start: Int = 0) = generateSequence(start, {it + 1})

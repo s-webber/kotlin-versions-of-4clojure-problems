@@ -1,11 +1,11 @@
 package kotlin4clojure.medium.digits_and_bases
 
-fun digits(input: Int, base: Int): List<Int> {
+fun digits(input: Int, base: Int) =
     if (input == 0) {
-        return listOf(0)
+        listOf(0)
     } else {
         var n = input
-        return generateSequence({
+        generateSequence({
             if (n > 0) {
                 val result = n % base
                 n /= base
@@ -15,4 +15,4 @@ fun digits(input: Int, base: Int): List<Int> {
             }
         }).toList().asReversed()
     }
-}
+

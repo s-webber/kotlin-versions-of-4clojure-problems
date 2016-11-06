@@ -1,12 +1,6 @@
 package kotlin4clojure.hard.number_maze
 
-fun numberMaze(start: Int, end: Int): Int {
-    return if (start == end) {
-        return 1
-    } else {
-        return numberMaze(setOf(start), end, 1)
-    }
-}
+fun numberMaze(start: Int, end: Int): Int = if (start == end) 1 else numberMaze(setOf(start), end, 1)
 
 tailrec fun numberMaze(input: Set<Int?>, target: Int, ctr: Int): Int {
     val next = input.map(::next).flatten().toSet()

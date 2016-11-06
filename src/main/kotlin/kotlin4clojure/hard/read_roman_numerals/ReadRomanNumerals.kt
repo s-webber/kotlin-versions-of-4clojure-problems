@@ -1,18 +1,17 @@
 package kotlin4clojure.hard.read_roman_numerals
 
-tailrec fun readRomanNumerals(input: String): Int {
-    if (input.isEmpty()) {
-        return 0
-    } else {
-        val next = next(input)
-        val remainder = input.substring(0, input.length - next.first.length)
-        return next.second + readRomanNumerals(remainder)
-    }
-}
+fun readRomanNumerals(input: String) = tailRecReadRomanNumerals(input, 0)
 
-fun next(input: String): Pair<String, Int> {
-    return romanNumerals.first { input.endsWith(it.first) }
-}
+private tailrec fun tailRecReadRomanNumerals(remaining: String, current: Int): Int =
+    if (remaining.isEmpty()) {
+        current
+    } else {
+        val next = next(remaining)
+        val remainder = remaining.substring(0, remaining.length - next.first.length)
+        tailRecReadRomanNumerals(remainder, current + next.second)
+    }
+
+fun next(input: String) = romanNumerals.first { input.endsWith(it.first) }
 
 val romanNumerals = listOf("CM" to 900,
                            "CD" to 400,

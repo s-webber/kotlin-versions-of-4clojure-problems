@@ -4,10 +4,10 @@ fun <T: Any> globalTakeWhile(n: Int, predicate: (T) -> Boolean, input: List<T>):
     var remaining = input
     var matches = 0
 
-    fun next(): T? {
+    return generateSequence {
         val next = remaining.firstOrNull()
         if (next == null) {
-            return null
+            null
         } else {
             if (predicate.invoke(next)) {
                 matches++
@@ -15,12 +15,10 @@ fun <T: Any> globalTakeWhile(n: Int, predicate: (T) -> Boolean, input: List<T>):
 
             if (matches < n) {
                 remaining = remaining.drop(1)
-                return next
+                next
             } else {
-                return null
+                null
             }
         }
     }
-
-    return generateSequence(::next)
 }

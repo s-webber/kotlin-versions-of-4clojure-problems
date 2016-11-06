@@ -32,4 +32,4 @@ fun <T> levenshteinDistance(lhs: List<T>, rhs: List<T>): Int {
     return cost[lhs.size]
 }
 
-inline fun min(a: Int, b: Int, c: Int) = Math.min(Math.min(a, b), c)
+fun min(a: Int, b: Int, c: Int) = Math.min(Math.min(a, b), c)

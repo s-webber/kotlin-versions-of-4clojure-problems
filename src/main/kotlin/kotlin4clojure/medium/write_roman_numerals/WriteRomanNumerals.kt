@@ -14,9 +14,7 @@ tailrec fun writeRomanNumerals(input: Int, output: StringBuilder) {
     }
 }
 
-fun next(input: Int): Pair<String, Int> {
-    return romanNumerals.first { it.second <= input }
-}
+fun next(input: Int) = romanNumerals.first { it.second <= input }
 
 val romanNumerals = listOf("M" to 1000,
                            "CM" to 900,

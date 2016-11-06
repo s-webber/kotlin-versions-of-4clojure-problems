@@ -3,15 +3,13 @@ package kotlin4clojure.medium.partition_a_list
 fun <T> partitionList(size: Int, input: List<T>): Sequence<List<T>> {
     var remaining = input
 
-    fun next() : List<T>? {
+    return generateSequence {
         if (remaining.size < size) {
-            return null
+            null
         } else {
             val result = remaining.take(size)
             remaining = remaining.drop(size)
-            return result
+            result
         }
     }
-
-    return generateSequence(::next)
 }
