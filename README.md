@@ -4,11 +4,13 @@
 
 This project provides unit tests to support the solving of [4Clojure](https://www.4clojure.com/) problems using the [Kotlin](https://kotlinlang.org/) programming language.
 
-## Structure
+## Directory structure
 
 The `src/test/kotlin` directory contains the unit tests.
 
 The `src/main/kotlin` directory contains the functions that the unit tests call.
+
+## Running the tests
 
 You can run the unit tests from the command line by using the following command:
 
@@ -22,15 +24,22 @@ You will then be able to view the resulting test report at:
 build/reports/tests/index.html
 ```
 
-You will see a large number of test failures.
+## Usage
+
+When you first run the unit tests you will see a large number of failures.
 This is to be expected.
-The functions in `src/main/kotlin`, that are called by the unit tests, contain nothing but a call to [`TODO`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html), which always throws `NotImplementedError` to indicate that the operation is not implemented. e.g.:
+The functions in `src/main/kotlin`, that are called by the unit tests, contain nothing but a call to [`TODO`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html) - which always throws `NotImplementedError` to indicate that the operation is not implemented. e.g.:
 
 ```
 fun <T> symmetricDifference(a: Set<T>, b: Set<T>): Set<T> {
    TODO("Add your solution here")
 }
 ```
+
+To get the unit tests to succeed you will need to replace the calls to `TODO` with actual solutions to the problems.
+You may wish to first fork the repository to allow you to keep a record of your progress.
+
+If you are seeking inspiration for how to solve the problems then you can checkout the [`solutions`](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/tree/solutions) branch to view example solutions.
 
 ## Example
 
