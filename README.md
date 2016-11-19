@@ -34,9 +34,9 @@ fun <T> symmetricDifference(a: Set<T>, b: Set<T>): Set<T> {
 
 ## Example
 
-The following links demonstrate the relationship between a problems on the 4Clojure website, the corresponding Kotlin unit tests in the `kotlin-versions-of-4clojure-problems` repository, the failing function on the `master` branch and a working solution on the `solutions` branch:
+The following links demonstrate the relationship between a problem on the 4Clojure website, the corresponding Kotlin unit tests in the `kotlin-versions-of-4clojure-problems` repository, the failing function on the `master` branch and a working solution on the `solutions` branch:
 
 - The 4Clojure website contains a [description of the "Count Occurrences" problem](https://www.4clojure.com/problem/55).
-- The `kotlin-versions-of-4clojure-problems` repository contains [Kotlin unit tests for the problem](blob/master/src/test/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrencesTest.kt).
-- The `master` branch contains a [function which causes the unit tests to fail](blob/master/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
-- The `solutions` branch contains a [working solution to the problem which cause the unit tests to succeed](blob/solutions/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
+- The `kotlin-versions-of-4clojure-problems` repository contains [Kotlin unit tests for the problem](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/master/src/test/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrencesTest.kt).
+- The `master` branch contains a [function which causes the unit tests to fail](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/master/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
+- The `solutions` branch contains a [working solution to the problem which cause the unit tests to succeed](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/solutions/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
