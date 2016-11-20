@@ -48,4 +48,12 @@ The following links demonstrate the relationship between a problem on the 4Cloju
 - The 4Clojure website contains a [description of the "Count Occurrences" problem](https://www.4clojure.com/problem/55).
 - The `kotlin-versions-of-4clojure-problems` repository contains [Kotlin unit tests for the problem](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/master/src/test/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrencesTest.kt).
 - The `master` branch contains a [function which causes the unit tests to fail](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/master/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
-- The `solutions` branch contains a [working solution to the problem which cause the unit tests to succeed](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/solutions/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
+- The `solutions` branch contains a [working solution to the problem, which causes the unit tests to succeed](https://github.com/s-webber/kotlin-versions-of-4clojure-problems/blob/solutions/src/main/kotlin/kotlin4clojure/medium/count_occurrences/CountOccurrences.kt).
+
+## Notes
+
+Differences between 4Clojure and `kotlin-versions-of-4clojure-problems` include:
+
+- Some 4Clojure problems (particularly the elementary problems) are concerned with specific Clojure functions (e.g. ["Let it Be"](https://www.4clojure.com/problem/36)) and so have not been ported to `kotlin-versions-of-4clojure-problems`.
+- Some 4Clojure problems have special restrictions regarding which functions can be used to solve them (e.g. ["Count a Sequence"](https://www.4clojure.com/problem/22)) - `kotlin-versions-of-4clojure-problems` does not impose similar restrictions.
+- The 4Clojure website enforces time limits on how long tests can take to run - `kotlin-versions-of-4clojure-problems` does not enforce any time limits.
