@@ -21,48 +21,63 @@ import org.junit.Test
  */
 class GameOfLifeTest {
     @Test fun f1() {
-        val expected = arrayOf("      ",
-                               " ##   ",
-                               " #    ",
-                               "    # ",
-                               "   ## ",
-                               "      ")
-        val actual = gameOfLife("      ",
-                                " ##   ",
-                                " ##   ",
-                                "   ## ",
-                                "   ## ",
-                                "      ")
+        val input = listOf(
+            "      ",
+            " ##   ",
+            " ##   ",
+            "   ## ",
+            "   ## ",
+            "      "
+        )
+        val expected = listOf(
+            "      ",
+            " ##   ",
+            " #    ",
+            "    # ",
+            "   ## ",
+            "      "
+        )
+        val actual = gameOfLife(input)
         assertEquals(expected, actual)
     }
 
     @Test fun f2() {
-        val expected = arrayOf("     ",
-                               "  #  ",
-                               "  #  ",
-                               "  #  ",
-                               "     ")
-        val actual = gameOfLife("      ",
-                                "      ",
-                                "  ### ",
-                                "      ",
-                                "      ")
+        val input = listOf(
+            "     ",
+            "  #  ",
+            "  #  ",
+            "  #  ",
+            "     "
+        )
+        val expected = listOf(
+            "     ",
+            "     ",
+            " ### ",
+            "     ",
+            "     "
+        )
+        val actual = gameOfLife(input)
         assertEquals(expected, actual)
     }
 
     @Test fun f3() {
-        val expected = arrayOf("      ",
-                               "   #  ",
-                               " #  # ",
-                               " #  # ",
-                               "  #   ",
-                               "      ")
-        val actual = gameOfLife("      ",
-                                "      ",
-                                "  ### ",
-                                " ###  ",
-                                "      ",
-                                "      ")
+        val input = listOf(
+            "      ",
+            "      ",
+            "  ### ",
+            " ###  ",
+            "      ",
+            "      "
+        )
+        val expected = listOf(
+            "      ",
+            "   #  ",
+            " #  # ",
+            " #  # ",
+            "  #   ",
+            "      "
+        )
+        val actual = gameOfLife(input)
         assertEquals(expected, actual)
     }
 }

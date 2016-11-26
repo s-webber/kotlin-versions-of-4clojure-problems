@@ -1,5 +1,5 @@
 package kotlin4clojure.hard.game_of_life
 
-fun gameOfLife(vararg input: String): Array<String> {
+fun gameOfLife(input: List<String>): List<String> {
     TODO("Add your solution here")
 }
