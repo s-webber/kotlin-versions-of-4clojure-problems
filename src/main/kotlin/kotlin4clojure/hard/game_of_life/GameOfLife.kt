@@ -1,6 +1,7 @@
 package kotlin4clojure.hard.game_of_life
 
 import kotlin4clojure.util.plus
+import kotlin4clojure.util.toCoordinateMap
 
 private val LIVE_CELL = '#'
 
@@ -9,16 +10,12 @@ private val NEIGHBOURING_CELLS = listOf(-1 to -1, 0 to -1, 1 to -1,
                                         -1 to  1, 0 to  1, 1 to  1)
 
 fun gameOfLife(input: List<String>): List<String> {
-    val s = input.mapIndexed { y, row ->
-        row.mapIndexed { x, c ->
-            Pair(x to y, c)
-        }
-    }.flatten().toMap()
+    val coordinateMap = input.toCoordinateMap()
 
     // Produce a set containing the coordinates of all the live cells of the next generation.
-    val nextGenerationCells = s.filter { entry ->
+    val nextGenerationCells = coordinateMap.filter { entry ->
         val coordinate = entry.key
-        val numberOfLiveNeighbours = NEIGHBOURING_CELLS.count { s[coordinate + it] == LIVE_CELL }
+        val numberOfLiveNeighbours = NEIGHBOURING_CELLS.count { coordinateMap[coordinate + it] == LIVE_CELL }
         if (entry.value == LIVE_CELL) {
             // Any live cell with two or three live neighbours lives on to the next generation.
             numberOfLiveNeighbours == 2 || numberOfLiveNeighbours == 3

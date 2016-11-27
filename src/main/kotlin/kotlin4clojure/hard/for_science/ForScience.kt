@@ -1,13 +1,10 @@
 package kotlin4clojure.hard.for_science
 
 import kotlin4clojure.util.plus
+import kotlin4clojure.util.toCoordinateMap
 
 fun forScience(vararg input: String): Boolean {
-    val cells = input.mapIndexed { rowIdx, line ->
-        line.mapIndexed { colIdx, cell ->
-            Pair(colIdx to rowIdx, cell)
-        }
-    }.flatten().toMap()
+    val cells = input.toList().toCoordinateMap()
     val mouses = cells.filterValues { it == 'M' }.keys.toSet()
     val cheeses = cells.filterValues { it == 'C' }.keys.toSet()
     val empty = cells.filterValues { it == ' ' }.keys.toSet()

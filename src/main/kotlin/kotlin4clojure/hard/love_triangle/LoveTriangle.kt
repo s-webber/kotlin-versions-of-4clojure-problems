@@ -1,6 +1,7 @@
 package kotlin4clojure.hard.love_triangle
 
 import kotlin4clojure.util.plus
+import kotlin4clojure.util.toCoordinateMap
 
 val ROCK = '0'
 
@@ -26,11 +27,7 @@ fun toMineralSet(input: IntArray) : Set<Pair<Int, Int>> {
     val binaryString = input.map(Integer::toBinaryString);
     val maxLength = binaryString.maxBy(String::length)?.length ?: 0;
     val paddedBinaryString = binaryString.map { it.padStart(maxLength, ROCK) }
-    return paddedBinaryString.mapIndexed { y, row ->
-        row.mapIndexedNotNull { x, c ->
-            if (c != ROCK) x to y else null
-        }
-    }.flatten().toSet()
+    return paddedBinaryString.toCoordinateMap().filterValues { it != ROCK }.keys
 }
 
 tailrec fun getMaxShape(mineralSet: Set<Pair<Int, Int>>, direction: List<Pair<Int, Int>>, currentLayer: Set<Pair<Int, Int>>, currentSize: Int): Int {
