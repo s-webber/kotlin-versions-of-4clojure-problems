@@ -36,16 +36,16 @@ val diamondCoords = buildSequence {
 
         x += incX
         y += incY
-        if (x>maxX && y==1){
+        if (x > maxX && y == 1) {
             incX= -1
             incY= 1
-        } else if (x==0 && y>maxY) {
+        } else if (x == 0 && y > maxY) {
             incX = -1
             incY = -1
-        } else if (x==0 && y<minY) {
+        } else if (x == 0 && y < minY) {
             incX = 1
             incY = 1
-        } else if (y==0 && x<minX) {
+        } else if (y == 0 && x < minX) {
             incX = 1
             incY = -1
         }

@@ -66,4 +66,10 @@ class SquaresSquaredTest {
         val actual = squaresSquared(10, 10000)
         assertEquals(expected, actual)
     }
+
+    @Test fun diamondCoordsTest() {
+        val expected = listOf(0 to 0, 1 to 1, 0 to 2, -1 to 1, -2 to 0, -1 to -1, 0 to -2, 1 to -1,
+                              2 to 0, 3 to 1, 2 to 2, 1 to 3, 0 to 4, -1 to 3, -2 to 2, -3 to 1)
+        assertEquals(expected, diamondCoords.take(16).toList())
+    }
 }
