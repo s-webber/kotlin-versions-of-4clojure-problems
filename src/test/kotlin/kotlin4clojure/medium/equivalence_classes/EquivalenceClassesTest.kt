@@ -13,7 +13,7 @@ import org.junit.Test
 class EquivalenceClassesTest {
     @Test fun f1() {
         val expected = setOf(setOf(0), setOf(-1, 1), setOf(2, -2))
-        val actual = equivalenceClasses({x -> x * x}, setOf(-2, -1, -0, 1, 2))
+        val actual = equivalenceClasses({x -> x * x}, setOf(-2, -1, 0, 1, 2))
         assertEquals(expected, actual)
     }
 
@@ -31,7 +31,7 @@ class EquivalenceClassesTest {
 
     @Test fun f4() {
         val expected = setOf(setOf(0, 1, 2, 3, 4))
-        val actual = equivalenceClasses({x -> true}, setOf(0, 1, 2, 3, 4))
+        val actual = equivalenceClasses({_ -> true}, setOf(0, 1, 2, 3, 4))
         assertEquals(expected, actual)
     }
 }
