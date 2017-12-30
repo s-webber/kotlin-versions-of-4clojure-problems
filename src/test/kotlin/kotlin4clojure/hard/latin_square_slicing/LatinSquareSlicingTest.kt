@@ -1,7 +1,12 @@
 package kotlin4clojure.hard.latin_square_slicing
 
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNull
+import kotlin.test.assertTrue
+
 import org.junit.Test
+
 import kotlin4clojure.hard.latin_square_slicing.LatinSquareSlicingTest.Symbol.*
 
 /**
@@ -125,6 +130,62 @@ class LatinSquareSlicingTest {
                            listOf(1, 8, 5, 2, 4),
                            listOf(8, 1, 2, 4, 5))
         assertEquals(expected, latinSquareSlicing(input))
+    }
+
+    /** Extra test (not on the `master` branch) added to demonstrate the behaviour of the `getSubSquarePositions` function. */
+    @Test fun testGetSubSquarePositions() {
+        val expected = mapOf(2 to listOf(0 to 0, 0 to 1, 1 to 0, 1 to 1, 2 to 0, 2 to 1), 3 to listOf(0 to 0, 1 to 0))
+        val input = listOf(listOf(3, 1), listOf(4), listOf(2, 9, 1, 7))
+        assertEquals(expected, getSubSquarePositions(input))
+    }
+
+    /** Extra test (not on the `master` branch) added to demonstrate the behaviour of the `getRowAlignments` and `permutations` functions. */
+    @Test fun testGetRowAlignmentsAndPermutations() {
+        val input = listOf(listOf(3, 1), listOf(4), listOf(2, 9, 1))
+
+        val expectedAlignments =
+            listOf(listOf(listOf(3, 1, null), listOf(null, 3, 1)),
+                   listOf(listOf(4, null, null), listOf(null, 4, null), listOf(null, null, 4)),
+                   listOf(listOf(2, 9, 1)))
+        val actualAlignments = getRowAlignments(input)
+        assertEquals(expectedAlignments, actualAlignments)
+
+        val expectedPermutations =
+            listOf(listOf(listOf(3, 1, null), listOf(4, null, null), listOf(2, 9, 1)),
+                   listOf(listOf(3, 1, null), listOf(null, 4, null), listOf(2, 9, 1)),
+                   listOf(listOf(3, 1, null), listOf(null, null, 4), listOf(2, 9, 1)),
+                   listOf(listOf(null, 3, 1), listOf(4, null, null), listOf(2, 9, 1)),
+                   listOf(listOf(null, 3, 1), listOf(null, 4, null), listOf(2, 9, 1)),
+                   listOf(listOf(null, 3, 1), listOf(null, null, 4), listOf(2, 9, 1)))
+        val actualPermutations = actualAlignments.permutations()
+        assertEquals(expectedPermutations, actualPermutations)
+    }
+
+    /** Extra test (not on the `master` branch) added to demonstrate the behaviour of the `subSquare` function. */
+    @Test fun testSubSquare() {
+        val input = listOf(listOf(3, 1, 9, 8),
+                           listOf(4, 9, 3, null),
+                           listOf(2, 9, 1, 7),
+                           listOf(8, 5, 3, 4))
+
+        assertEquals(listOf(listOf(3, 1), listOf(4, 9)), subSquare(input, 0 to 0, 2))
+        assertEquals(listOf(listOf(3, 1, 9), listOf(4, 9, 3), listOf(2, 9, 1)), subSquare(input, 0 to 0, 3))
+        assertEquals(listOf(listOf(9, 1), listOf(5, 3)), subSquare(input, 1 to 2, 2))
+        assertEquals(listOf(listOf(1, 7), listOf(3, 4)), subSquare(input, 2 to 2, 2))
+
+        assertNull(subSquare(input, 2 to 1, 2))
+        assertNull(subSquare(input, 1 to 0, 3))
+        assertNull(subSquare(input, 0 to 0, 4))
+    }
+
+    /** Extra test (not on the `master` branch) added to demonstrate the behaviour of the `isLatin` function. */
+    @Test fun testIsLatin() {
+        assertTrue(isLatin(listOf(listOf(1, 2), listOf(2, 1))))
+        assertTrue(isLatin(listOf(listOf(1,2,3), listOf(2,3,1), listOf(3,1,2))))
+
+        assertFalse(isLatin(listOf(listOf(1, 2), listOf(1, 2))))
+        assertFalse(isLatin(listOf(listOf(1, 1), listOf(2, 2))))
+        assertFalse(isLatin(listOf(listOf(1, 2), listOf(3, 4))))
     }
 
     enum class Symbol { A, B, C, D, E, F }
