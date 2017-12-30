@@ -21,6 +21,7 @@ fun squaresSquared(start: Int, end: Int): List<String> {
     }
 }
 
+/** See `testDiamondCoords` of `SquaresSquaredTest` for a demonstration of this sequence. */
 val diamondCoords = buildSequence {
     var minX = 0
     var maxX = 0
