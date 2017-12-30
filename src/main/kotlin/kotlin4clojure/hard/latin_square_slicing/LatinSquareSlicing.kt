@@ -5,7 +5,7 @@ fun <T> latinSquareSlicing(input: List<List<T?>>): Set<Pair<Int, Int>> {
 
     val possibleAlignmentsOfRows = getRowAlignments(input)
 
-    // fir each permutation get sub squares and filter by latin
+    // for each permutation get all sub squares and filter them to only include versions that are latin squares
     val result = possibleAlignmentsOfRows.permutations().flatMap { permutation ->
         subSquarePositions.flatMap { (subSquareSize, startCoords) ->
             startCoords.map { subSquare(permutation, it, subSquareSize) }
